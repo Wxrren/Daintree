@@ -8,13 +8,12 @@ html {
 body {
     background: url('/media/body.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: calc(100vh - 164px);
-    color: #555;
-    font-family: 'Lato';
+    height: calc(100vh - 164px); 
+
 }
 
 #topnav {
-    background-image: url('/media/nav.jpg');
+    background: linear-gradient(90deg, rgba(16,73,2,1) 0%, rgba(1,116,16,1) 27%, rgba(10,138,84,1) 49%, rgba(0,183,255,1) 67%, rgba(4,59,122,1) 100%);
 }
 
 /* from Bulma */
@@ -22,12 +21,24 @@ body {
     align-items: center;
     display: inline-flex;
     justify-content: center;
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 2rem;
+    width: 2rem;
 }
 
 .logo-font {
     text-transform: uppercase;
+    font-family: "Pacifico", cursive; 
+    font-weight: 400;
+    font-size: 40px;
+    text-shadow: 3px 3px 3px #000;
+}
+
+.slogan-font {
+    text-transform: uppercase;
+    font-family: helvetica;
+    font-weight: 600;
+    font-size: 50px;
+    text-shadow: 3px 3px 3px #000;
 }
 
 .main-logo-link {
@@ -57,6 +68,10 @@ body {
 
 .text-black {
     color: #000 !important;
+}
+
+.text-orange {
+    color: rgb(250, 83, 6) !important;
 }
 
 .border-black {
