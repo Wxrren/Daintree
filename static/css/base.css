@@ -1,48 +1,14 @@
-/* Colours */
-
-
-html {
-    height: 100%;
+/* ----------------Colours------------- */
+#topnav, .navbar {
+    background: #002c2c;
 }
 
-body {
-    background: url('/media/body.jpg') no-repeat center center fixed;
-    background-size: cover;
-    height: calc(100vh - 164px); 
-
+.text-black {
+    color: #000 !important;
 }
 
-#topnav {
-    background: linear-gradient(90deg, rgba(16,73,2,1) 0%, rgba(1,116,16,1) 27%, rgba(10,138,84,1) 49%, rgba(0,183,255,1) 67%, rgba(4,59,122,1) 100%);
-}
-
-/* from Bulma */
-.icon {
-    align-items: center;
-    display: inline-flex;
-    justify-content: center;
-    height: 2rem;
-    width: 2rem;
-}
-
-.logo-font {
-    text-transform: uppercase;
-    font-family: "Pacifico", cursive; 
-    font-weight: 400;
-    font-size: 40px;
-    text-shadow: 3px 3px 3px #000;
-}
-
-.slogan-font {
-    text-transform: uppercase;
-    font-family: helvetica;
-    font-weight: 600;
-    font-size: 50px;
-    text-shadow: 3px 3px 3px #000;
-}
-
-.main-logo-link {
-    width: fit-content;
+.text-orange {
+    color: rgb(250, 83, 6) !important;
 }
 
 .shop-now-button {
@@ -52,8 +18,8 @@ body {
 }
 
 .btn-black {
-    background: black;
-    color: white;
+    background: white;
+    color: #000;
 }
 
 .shop-now-button:hover,
@@ -66,17 +32,58 @@ body {
     color: white;
 }
 
-.text-black {
-    color: #000 !important;
-}
-
-.text-orange {
-    color: rgb(250, 83, 6) !important;
-}
-
 .border-black {
     border: 1px solid black !important;
 }
+
+.bg-black {
+    background: #000 !important;
+}
+
+
+/* ----------------Fonts------------- */
+
+.logo-font {
+    text-transform: uppercase;
+    font-family: "Pacifico", cursive !important;
+    font-weight: 400;
+    font-size: 40px;
+    text-shadow: 3px 3px 3px #000;
+}
+
+.slogan-font {
+    text-transform: uppercase;
+    font-family: helvetica !important;
+    font-weight: 600;
+    font-size: 50px;
+    text-shadow: 3px 3px 3px #000;
+}
+
+
+html {
+    height: 100%;
+}
+
+body {
+    background: url('/media/body.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 164px); 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* from Bulma */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1rem;
+    width: 1rem;
+}
+
+.main-logo-link {
+    width: fit-content;
+}
+
 
 /* -------------------------------- Media Queries */
 
