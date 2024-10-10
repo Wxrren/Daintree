@@ -1,0 +1,82 @@
+[
+    {
+        "model": "products.category",
+        "pk": 110,
+        "fields": {
+            "name": "mens_clothing",
+            "friendly_name": "Men's Clothing"
+        }
+    },
+    {
+        "model": "products.category",
+        "pk": 116,
+        "fields": {
+            "name": "womens_clothing",
+            "friendly_name": "Women's Clothing"
+        }
+    },
+    {
+        "model": "products.category",
+        "pk": 84,
+        "fields": {
+            "name": "boys_clothing",
+            "friendly_name": "Boys' Clothing"
+        }
+    },
+    {
+        "model": "products.category",
+        "pk": 91,
+        "fields": {
+            "name": "girls_clothing",
+            "friendly_name": "Girls' Clothing"
+        }
+    },
+    {
+        "model": "products.category",
+        "pk": 114,
+        "fields": {
+            "name": "mens_shoes",
+            "friendly_name": "Men's Shoes"
+        }
+    },
+    {
+        "model": "products.category",
+        "pk": 122,
+        "fields": {
+            "name": "womens_shoes",
+            "friendly_name": "Women's Shoes"
+        }
+    },
+    {
+        "model": "products.category",
+        "pk": 215,
+        "fields": {
+            "name": "tools_and_home_improvement",
+            "friendly_name": "Tools & Home Improvement"
+        }
+    },
+    {
+        "model": "products.category",
+        "pk": 230,
+        "fields": {
+            "name": "baby_and_toddler_toys",
+            "friendly_name": "Baby & Toddler Toys"
+        }
+    },
+    {
+        "model": "products.category",
+        "pk": 170,
+        "fields": {
+            "name": "kitchen_and_dining",
+            "friendly_name": "Kitchen & Dining"
+        }
+    },
+    {
+        "model": "products.category",
+        "pk": 83,
+        "fields": {
+            "name": "video_game_consoles_and_accessories",
+            "friendly_name": "Video Game Consoles & Accessories"
+        }
+    }
+]
