@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Product
+from django.core.paginator import Paginator
 
 # Create your views here.
 
@@ -9,8 +10,13 @@ def all_products(request):
 
     products = Product.objects.all()
 
+    # Pagination
+    paginator = Paginator(products, 100)  
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
     context = {
-        'products': products,
+        'products': page_obj,
     }
 
     return render(request, 'products/products.html', context)

@@ -32,6 +32,17 @@
     color: white;
 }
 
+.btn-outline-secondary {
+    color: rgb(250, 83, 6);
+    border-color: rgb(250, 83, 6);
+}
+
+.btn-secondary {
+    color: rgb(250, 83, 6);
+    border-color: rgb(250, 83, 6);
+    background-color:white;
+}
+
 .border-black {
     border: 1px solid black !important;
 }
@@ -59,7 +70,7 @@
     text-shadow: 3px 3px 3px #000;
 }
 
-
+/* ----------------Body------------- */
 html {
     height: 100%;
 }
@@ -83,6 +94,70 @@ body {
 .main-logo-link {
     width: fit-content;
 }
+
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: #002222;
+	z-index: -1;
+}
+
+/* ----------------Pagination------------- */
+.pagination-btns {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pagination-btns .btn {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+
+/* ----------------Product Cards------------- */
+.product-container {
+    padding: 0 15px; 
+}
+
+.product-container {
+    padding: 0 15px;
+}
+
+.product-container {
+    padding: 0 15px;
+}
+
+.card {
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+    max-height: 200px; 
+    object-fit: contain; 
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.card-body,
+.card-footer {
+    padding: 15px;
+}
+
+.card-body p {
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.card-footer .lead {
+    font-size: 22px;
+}
+
 
 
 /* -------------------------------- Media Queries */
