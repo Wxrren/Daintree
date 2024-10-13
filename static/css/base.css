@@ -158,7 +158,10 @@ body {
     font-size: 22px;
 }
 
-
+a.category-badge > span.badge:hover {
+    background: rgb(250, 83, 6) !important;
+    color: #fff !important;
+}a
 
 /* -------------------------------- Media Queries */
 
