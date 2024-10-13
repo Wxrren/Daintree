@@ -58,6 +58,22 @@
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+                    <li class="list-inline-item dropdown mr-lg-3">
+                        <a class="text-orange nav-link" href="#" id="new-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="text-center">
+                                <div><i class="fas fa-regular fa-address-card fa-lg"></i></div>
+                                <p class="my-0">Contact Us</p>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu border-0" aria-labelledby="new-dropdown">
+                            {% if request.user.is_authenticated %}
+                                <a href="" class="dropdown-item">Enquiry Profile</a>
+                            {% else %}
+                                <a href="{% url 'account_signup' %}" class="dropdown-item">Get in Touch</a>
+                                <a href="{% url 'account_login' %}" class="dropdown-item">FAQ's</a>
+                            {% endif %}
+                        </div>
+                    </li>
                     <li class="list-inline-item dropdown">
                         <a class="text-orange nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">

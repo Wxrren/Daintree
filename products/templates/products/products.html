@@ -14,7 +14,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center mt-3">
-                <h2 class="logo-font text-orange">Products</h2>
+                <h2 class="slogan-font text-orange">Products</h2>
                 <hr class="w-50 mb-1">
             </div>
         </div>
@@ -24,6 +24,7 @@
                 <div class="row">
                     {% for product in products %}
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                            <div class="overlay-hover"></div>
                             <div class="card h-100">
                                 {% if product.image %}
                                 <a href="{% url 'product_detail' product.id %}">
@@ -73,22 +74,22 @@
                         {% endif %}
                     {% endfor %}
                 </div>
-                <div class="row mt-5"></div>
+                <div class="pagination-container">
                     <div class="col pagination-btns">
                         {% if products.has_previous %}
-                            <a href="?page={{ products.previous_page_number }}" class="btn btn-outline-secondary">Previous</a>
+                            <a href="?{{ params.urlencode }}&page={{ products.previous_page_number }}" class="btn btn-outline-secondary">Previous</a>
                         {% endif %}
-
+                
                         {% for num in products.paginator.page_range %}
                             {% if products.number == num %}
                                 <span class="btn btn-secondary">{{ num }}</span>
                             {% elif num > products.number|add:'-3' and num < products.number|add:'3' %}
-                                <a href="?page={{ num }}" class="btn btn-outline-secondary">{{ num }}</a>
+                                <a href="?{{ params.urlencode }}&page={{ num }}" class="btn btn-outline-secondary">{{ num }}</a>
                             {% endif %}
                         {% endfor %}
-
+                
                         {% if products.has_next %}
-                            <a href="?page={{ products.next_page_number }}" class="btn btn-outline-secondary">Next</a>
+                            <a href="?{{ params.urlencode }}&page={{ products.next_page_number }}" class="btn btn-outline-secondary">Next</a>
                         {% endif %}
                     </div>
                 </div>
