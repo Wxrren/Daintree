@@ -128,6 +128,19 @@ body {
     cursor: pointer;
 }
 
+.btn-outline-orange {
+    background: #002222;
+    color: rgb(250, 83, 6) !important; /* use important to override link colors for <a> elements */
+    border: 1px solid rgb(250, 83, 6);
+}
+
+.btn-outline-orange:hover,
+.btn-outline-orange:active,
+.btn-outline-orange:focus {
+    background: rgb(250, 83, 6);
+    color: white !important;
+}
+
 /* ----------------Product Cards------------- */
 .product-container {
     padding: 0 15px; 
@@ -173,6 +186,8 @@ a.category-badge > span.badge:hover {
     background: rgb(250, 83, 6) !important;
     color: #fff !important;
 }a
+
+
 
 /* -------------------------------- Media Queries */
 
