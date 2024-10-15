@@ -28,7 +28,7 @@
         </div>
         <div class="col-12 col-md-6 col-lg-4">
             <div class="product-details-container mb-5 mt-md-5">
-                <p class="mb-0 text-orange">{{ product.name }}</p>
+                <h5 class="mb-0 text-orange">{{ product.name }}</h5>
                 <p class="lead mb-0 text-left text-orange font-weight-bold">${{ product.price }}</p>
                 {% if product.category %}
                 <p class="small mt-1 mb-0">
@@ -55,7 +55,7 @@
                         {% with product.has_sizes as s %}
                         {% if s %}
                             <div class="col-12">
-                                <p><strong>Size:</strong></p>
+                                <p class="text-orange"><strong>Size:</strong></p>
                                 <select class="form-control rounded-0 w-50" name="product_size" id='id_product_size'>
                                     <option value="xs">XS</option>
                                     <option value="s">S</option>

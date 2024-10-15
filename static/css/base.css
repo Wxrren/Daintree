@@ -139,7 +139,7 @@ body {
 .btn-outline-orange:focus {
     background: rgb(250, 83, 6);
     color: white !important;
-}
+}   
 
 /* ----------------Product Cards------------- */
 .product-container {
@@ -191,7 +191,7 @@ a.category-badge > span.badge:hover {
 
 /* -------------------------------- Media Queries */
 
-/* Slightly larger container on xl screens */
+//* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
     .container {
       max-width: 80%;
