@@ -51,7 +51,7 @@
                             <p class="mb-0 text-orange">{{ order.date }}</p>
                         </div>
                     </div>
-
+                    <br>
                     <div class="row">
                         <div class="col">
                             <small class="text-muted text-orange">Order Details:</small>
@@ -64,6 +64,7 @@
                             <p class="small mb-0 text-orange font-weight-bold">
                                 {{ item.product.name }}{% if item.product_size %} - Size {{ item.product_size|upper }}{% endif %}
                             </p>
+                            <br>
                         </div>
                         <div class="col-12 col-md-8 text-md-right">
                             <p class="small mb-0 text-orange">{{ item.quantity }} @ ${{ item.product.price }} each</p>
@@ -154,7 +155,7 @@
                             <p class="mb-0 text-orange">{{ order.phone_number }}</p>
                         </div>
                     </div>
-
+                    <br>
                     <div class="row">
                         <div class="col">
                             <small class="text-muted text-orange">Billing Info:</small>
