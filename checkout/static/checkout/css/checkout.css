@@ -1,3 +1,4 @@
+/* -------------------------------- Stripe CSS */
 .StripeElement,
 .stripe-style-input {
   box-sizing: border-box;
@@ -36,6 +37,18 @@
     border: 1px solid #000;
 }
 
+/* -------------------------------- Country selector */
+select,
+select option {
+    color: #000000;
+}
+
+select:invalid,
+select option[value=""] {
+    color: #aab7c4 !important;
+}
+
+/* -------------------------------- Checkout overlay */
 #loading-overlay {
 	display: none;
 	position: fixed;
@@ -53,4 +66,13 @@
     justify-content: center;
     margin: 0;
     height: 100%;
+}
+
+/* -------------------------------- Media Queries */
+@media (min-width: 992px) {
+  .order-lg-last {
+    -ms-flex-order: initial;
+    order: initial
+      /* order: 13; */
+  }
 }

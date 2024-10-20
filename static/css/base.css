@@ -164,6 +164,7 @@ body {
     overflow-y: auto;
 }
 
+/* ----------------Page Overlay------------- */
 
 .overlay {
 	height: 100%;
@@ -187,6 +188,7 @@ body {
     margin-left: 5px;
 }
 
+/* ----------------Buttons------------- */
 .btt-button {
     height: 50px;
     width: 50px;
