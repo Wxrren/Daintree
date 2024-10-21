@@ -22,8 +22,9 @@ def enquiries(request):
                 enquiry.user_profile = profile
             enquiry.save()
             messages.success(request, 'Enquiry submitted successfully')
-            return redirect('enquiries')  
-
+            
+            return redirect('enquiries_success', pk=enquiry.id)
+    
     else:
         form = EnquiryForm()
 
@@ -54,7 +55,13 @@ def enquiry_detail(request, enquiry_id):
             return render(request, 'contactus/enquiry_detail.html', {'enquiry': enquiry})
         else:
             messages.error(request, "You don't have permission to view this enquiry.")
-            return redirect('enquiries')
+            return redirect('enquiries')  
     else:
         messages.error(request, "You must be logged in to view enquiry details.")
         return redirect('login')
+
+
+def enquiries_success(request, pk):
+    """ View for displaying successful submission """
+    enquiry = get_object_or_404(Enquiry, id=pk)
+    return render(request, 'contactus/enquiries_success.html', {'enquiry': enquiry})
