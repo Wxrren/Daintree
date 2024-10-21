@@ -11,6 +11,10 @@ class Enquiry(models.Model):
     """
     A model for handling user enquiries.
     """
+
+    class Meta:
+        verbose_name_plural = 'Enquiries'
+
     ENQUIRY_STATUS = (
         ('unresolved', 'Unresolved'),
         ('resolved', 'Resolved')
