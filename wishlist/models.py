@@ -25,7 +25,10 @@ class Wishlist(models.Model):
     description = models.TextField(blank=True)
 
     def __str__(self):
-        return f"{self.user_profile.user.username}'s wishlist"
+        return (
+            f"{self.user_profile.user.username}'s "
+            f"wishlist item: {self.product.name}"
+        )
 
     def clean(self):
         if self.pk:
@@ -35,17 +38,16 @@ class Wishlist(models.Model):
             if existing_wishlist.exists():
                 raise ValidationError(
                     "A wishlist entry for this product already exists."
-                    )
+                )
         else:
             existing_wishlist = Wishlist.objects.filter(
                 user_profile=self.user_profile,
                 product=self.product
-                )
+            )
             if existing_wishlist.exists():
                 raise ValidationError(
                     "This product is already in your wishlist."
-                    )
+                )
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
-        pass

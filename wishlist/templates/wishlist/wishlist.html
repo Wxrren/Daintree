@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'wishlist/css/wishlist.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="content-wrap">
+    <div class="container">
+        <h1>Your Wishlist</h1>
+        
+        {% if wishlist_items %}
+            <ul>
+                {% for item in wishlist_items %}
+                    <li>
+                        {{ item.product.name }} - Price: £{{ item.product.price }}
+                        <a href="{% url 'product_detail' item.product.id %}">View Product</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Your wishlist is currently empty.</p>
+        {% endif %}
+    </div>
+</div>
+
+<a href="{% url 'products' %}" class="back-link">Back to Products</a>
+{% endblock %}

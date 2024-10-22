@@ -42,6 +42,13 @@
                 {% else %}
                     <small class="text-muted text-orange">No Rating</small>
                 {% endif %}
+                {% if request.user.is_authenticated %}
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="btn btn-primary mt-3">Add to Wishlist</button>
+                    </form>
+                {% endif %}
                 {% if request.user.is_superuser %}
                     <small class="ml-3">
                         <a href="">Edit</a> | 
