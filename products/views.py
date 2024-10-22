@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
 from .models import Product, Category
-from .forms import WishlistForm
 from django.core.paginator import Paginator
 from django.db.models.functions import Lower
 
@@ -76,21 +75,8 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
 
-    if request.method == 'POST':
-        form = WishlistForm(request.POST)
-        if form.is_valid():
-            form.save(commit=False)
-            form.instance.user_profile = request.user.userprofile
-            form.instance.product = product
-            form.save()
-            messages.success(request, f"{product.name} added to your wishlist!")
-            return redirect('product_detail', product_id=product_id)
-    else:
-        form = WishlistForm(initial={'product': product})
-
     context = {
         'product': product,
-        'form': form,
     }
 
     return render(request, 'products/product_detail.html', context)
