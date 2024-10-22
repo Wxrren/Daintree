@@ -16,7 +16,7 @@
         <div class="col">
             <hr>
             {% if request.user.is_authenticated %}
-            <h2 class="slogan-font mb-4 text-orange">{{profile}}'s Enquiry Status</h2>
+            <h2 class="slogan-font mb-4 text-orange">{{ enquiry.enquiry_profile }}'s Enquiry Status</h2>
             {% else %}
             <h2 class="slogan-font mb-4 text-orange">Your Enquiry Status</h2>
             {% endif %}
