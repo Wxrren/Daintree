@@ -71,7 +71,7 @@
                             {% if request.user.is_authenticated %}
                                 <a href="{% url 'enquiries' %}" class="dropdown-item">Enquiry Profile</a>
                             {% else %}
-                                <a href="" class="dropdown-item">Get in Touch</a>
+                                <a href="{% url 'enquiries' %}" class="dropdown-item">Get in Touch</a>
                                 <a href="" class="dropdown-item">FAQ's</a>
                             {% endif %}
                         </div>

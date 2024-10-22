@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from .models import UserProfile, Enquiry
-from .forms import EnquiryForm
+from .forms import EnquiryForm, EditEnquiryForm
 
 
 def enquiries(request):
@@ -49,16 +49,41 @@ def enquiry_detail(request, enquiry_id):
     """ View for individual enquiry details """
     enquiry = get_object_or_404(Enquiry, pk=enquiry_id)
     
+    if request.method == 'POST':
+        if 'action' in request.POST:
+            action = request.POST.get('action')
+            if action == 'resolve':
+                enquiry.resolved = True
+                enquiry.save()
+                messages.success(request, "Enquiry marked as resolved")
+            else:
+                form = EditEnquiryForm(request.POST, instance=enquiry)
+                if form.is_valid():
+                    form.save()
+                    messages.success(request, "Enquiry updated successfully")
+        else:
+            pass
     if request.user.is_authenticated:
         profile = get_object_or_404(UserProfile, user=request.user)
         if profile.enquiries.filter(id=enquiry.id).exists():
-            return render(request, 'contactus/enquiry_detail.html', {'enquiry': enquiry})
+            return render(request, 'contactus/enquiry_detail.html', {'enquiry': enquiry, 'form': EditEnquiryForm(instance=enquiry)})
         else:
             messages.error(request, "You don't have permission to view this enquiry.")
             return redirect('enquiries')  
     else:
-        messages.error(request, "You must be logged in to view enquiry details.")
-        return redirect('login')
+        if request.GET.get('enquiry_number'):
+            return render(request, 'contactus/enquiry_detail.html', {'enquiry': enquiry, 'form': EditEnquiryForm(instance=enquiry)})
+        else:
+            messages.error(request, "You must be logged in to view enquiry details.")
+            return redirect('login')
+
+    template = 'contactus/enquiry_detail.html'
+    context = {
+        'enquiry_form': form,
+        'profile': profile,
+        'enquiries': enquiries,
+    }
+    return render(request, template, context)
 
 
 def enquiries_success(request, pk):
