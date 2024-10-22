@@ -11,9 +11,10 @@ def enquiries(request):
         profile = get_object_or_404(UserProfile, user=request.user)
         is_anonymous = False
     else:
-        profile = None
-        is_anonymous = True
-
+        # Redirect anonymous users to the allauth login page
+        messages.error(request, 'Please sign in to raise an enquiry or email us at daintree_contact@daintree.com ')
+        return redirect('account_login')
+        
     if request.method == 'POST':
         form = EnquiryForm(request.POST)
         if form.is_valid():
@@ -28,18 +29,14 @@ def enquiries(request):
     else:
         form = EnquiryForm()
 
-    if is_anonymous:
-        enquiries = Enquiry.objects.filter(enquiry_number__icontains=request.GET.get('enquiry_number', '')).order_by('-date')
-    else:
-        enquiries = profile.enquiries.all().order_by('-date')
+    enquiries = profile.enquiries.all().order_by('-date')
 
     template = 'contactus/enquiries.html'
     context = {
         'enquiry_form': form,
         'profile': profile,
-        'on_profile_page': is_anonymous,
+        'on_profile_page': True,
         'enquiries': enquiries,
-        'is_anonymous': is_anonymous,
     }
 
     return render(request, template, context)
@@ -84,7 +81,6 @@ def enquiry_detail(request, enquiry_id):
         'enquiries': enquiries,
     }
     return render(request, template, context)
-
 
 def enquiries_success(request, pk):
     """ View for displaying successful submission """
