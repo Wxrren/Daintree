@@ -28,26 +28,3 @@ class EnquiryForm(forms.ModelForm):
             self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'border-black rounded-0 enquiry-form-input'
             self.fields[field].label = False
-
-class EditEnquiryForm(forms.ModelForm):
-    class Meta:
-        model = Enquiry
-        fields = ['full_name', 'email', 'phone_number', 'enquiry_subject', 'enquiry_message']
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        
-        placeholders = {
-            'full_name': 'Full Name',
-            'email': 'Email Address',
-            'phone_number': 'Phone Number',
-            'enquiry_subject': 'Enquiry Subject',
-            'enquiry_message': 'Enquiry Message'
-        }
-
-        self.fields['full_name'].widget.attrs['autofocus'] = True
-        for field in self.fields:
-            placeholder = placeholders[field]
-            self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'border-black rounded-0 enquiry-form-input'
-            self.fields[field].label = False
