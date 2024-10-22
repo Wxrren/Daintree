@@ -24,6 +24,42 @@
     <div class="row">
         <div class="col">
             {% if wishlist_items %}
+                <div class="table-responsive rounded">
+                    <table class="table table-sm table-borderless">
+                        <thead class="text-black">
+                            <tr>
+                                <th scope="col">Item</th>
+                                <th scope="col"></th>
+                                <th scope="col">Price</th>
+                            </tr>
+                        </thead>
+
+                        {% for item in wishlist_items %}
+                                <tr>
+                                    <td class="p-3 w-25">
+                                        <img class="img-fluid rounded" src="{{ item.product.image.url }}">
+                                    </td>
+                                    <td class="py-3">
+                                        <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                                        <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
+                                    </td>
+                                    <td class="py-3">
+                                        <p class="my-0">${{ item.product.price }}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="5" class="text-right">
+                                        <a href="" class="btn btn-black rounded-0 btn-lg">
+                                            <span class="text-uppercase">Add To Bag</span>
+                                            <span class="icon">
+                                                <i class="fas fa-lock"></i>
+                                            </span>
+                                        </a>
+                                    </td>
+                                </tr>
+                        {% endfor %}
+                    </table>
+                </div>
             {% else %}
                 <p class="text-orange mb-4">Your wishlist is currently empty.</p>
                 <a href="{% url 'products' %}" class="btn btn-outline-orange rounded-0 btn-lg">

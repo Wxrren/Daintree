@@ -43,12 +43,15 @@
                     <small class="text-muted text-orange">No Rating</small>
                 {% endif %}
                 {% if request.user.is_authenticated %}
-                    <form method="post">
-                        {% csrf_token %}
-                        {{ form.as_p }}
-                        <button type="submit" class="btn btn-primary mt-3">Add to Wishlist</button>
-                    </form>
+                <form class="form" action="{% url 'add_to_wishlist' product.id %}" method="POST">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        <button type="submit" class="btn btn-outline-orange rounded-0 mt-5">Add to Wishlist</button>
+                    </div>
+                </form>
                 {% endif %}
+                <hr>
                 {% if request.user.is_superuser %}
                     <small class="ml-3">
                         <a href="">Edit</a> | 
