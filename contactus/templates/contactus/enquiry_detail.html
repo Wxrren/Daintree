@@ -45,16 +45,6 @@
                         <small class="text-muted text-orange">Enquiry Details:</small>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12 col-lg-7 text-right text-orange">
-                        <a href="{% url 'enquiries' %}" class="btn btn-black rounded-0 my-2 text-orange">
-                            <span class="icon mr-2">
-                                <i class="fas fa-angle-left"></i>
-                            </span>
-                            <span class="text-uppercase">Back to Enquiries</span>
-                        </a>
-                    </div>
-                </div>
                 <form method="POST" action="{% url 'enquiry-detail' enquiry.id %}">
                     {% csrf_token %}
                     {{ form|crispy }}
@@ -65,6 +55,16 @@
                     <input type="hidden" name="action" value="resolve">
                     <button type="submit" class="btn btn-black rounded-0 my-2 text-orange">Mark Resolved</button>
                 </form>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-7 text-right text-orange">
+                    <a href="{% url 'enquiries' %}" class="btn rounded-0 my-2 text-orange">
+                        <span class="icon mr-2">
+                            <i class="fas fa-angle-left"></i>
+                        </span>
+                        <span class="text-uppercase">Back to Enquiries</span>
+                    </a>
+                </div>
             </div>
         </div>
     </div>   
