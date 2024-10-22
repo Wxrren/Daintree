@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'contactus/css/enquiries.css' %}">
+{% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="slogan-font mb-4 text-orange">Enquiries</h2>
+        </div>
+    </div>
+
+        <div id="customer-table" class="col-13 col-lg-20">
+            {% if request.user.is_superuser %}
+            <p class="text-muted text-orange">Enquiry History</p>
+            <div class="enquiry-history table-responsive">
+                <table class="table table-sm table-borderless text-orange">
+                    <thead>
+                        <tr>
+                            <th>Enquiry Number</th>
+                            <th>User</th>
+                            <th>Contact</th>
+                            <th>Subject</th>
+                            <th>Message</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Update Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for enquiry in enquiries %}
+                        <tr>
+                            <td>{{ enquiry.enquiry_number }}</td>
+                            <td>{{ enquiry.user_profile }}</td>
+                            <td>{{ enquiry.email }} & {{ enquiry.phone_number }}</td>
+                            <td>{{ enquiry.enquiry_subject }}</td>
+                            <td class="message-column">{{ enquiry.enquiry_message }}</td>
+                            <td>{{ enquiry.date|date:"Y-m-d" }}</td>
+                            <td>{{ enquiry.resolved|yesno:"Resolved,Unresolved" }}</td>
+                            <td>
+                                {% if request.user.is_superuser %}
+                                <form method="POST" action="{% url 'resolve-enquiry' enquiry.id %}">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="action" value="resolve">
+                                    <button type="submit" class="btn btn-black rounded-0 my-2 text-orange">Mark Resolved</button>
+                                </form>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

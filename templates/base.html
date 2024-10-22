@@ -69,10 +69,12 @@
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="new-dropdown">
                             {% if request.user.is_authenticated %}
+                                {% if request.user.is_superuser %}
+                                    <a href="{% url 'superuser_enquiries' %}" class="dropdown-item">Customer Enquiries</a>
+                                {% endif %}
                                 <a href="{% url 'enquiries' %}" class="dropdown-item">Enquiry Profile</a>
                             {% else %}
                                 <a href="{% url 'enquiries' %}" class="dropdown-item">Get in Touch</a>
-                                <a href="" class="dropdown-item">FAQ's</a>
                             {% endif %}
                         </div>
                     </li>

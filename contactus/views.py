@@ -9,10 +9,9 @@ def enquiries(request):
     
     if request.user.is_authenticated:
         profile = get_object_or_404(UserProfile, user=request.user)
-        is_anonymous = False
     else:
         # Redirect anonymous users to the allauth login page
-        messages.error(request, 'Please sign in to raise an enquiry or email us at daintree_contact@daintree.com ')
+        messages.info(request, 'Please sign in to raise an enquiry or email us at daintree_contact@daintree.com ')
         return redirect('account_login')
         
     if request.method == 'POST':
@@ -40,6 +39,35 @@ def enquiries(request):
     }
 
     return render(request, template, context)
+
+
+def superuser_enquiries(request):
+    """ A view to show all enquiries for superusers """
+    
+    enquiries = Enquiry.objects.all().order_by('-date')
+    
+    template = 'contactus/customer_enquiries.html'
+    context = {
+        'enquiries': enquiries,
+    }
+
+    return render(request, template, context)
+
+
+def resolve_enquiry(request, enquiry_id):
+    """ View to mark an enquiry as resolved """
+    enquiry = get_object_or_404(Enquiry, pk=enquiry_id)
+    
+    if request.method == 'POST':
+        if 'action' in request.POST:
+            action = request.POST.get('action')
+            if action == 'resolve':
+                enquiry.resolved = True
+                enquiry.save()
+                messages.success(request, "Enquiry marked as resolved")
+                return redirect('superuser_enquiries')  #
+    
+    return redirect('superuser_enquiries')  
 
 
 def enquiry_detail(request, enquiry_id):
