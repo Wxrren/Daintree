@@ -33,7 +33,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-wxrren-daintree-17e0emw7ah9.ws.codeinstitute-ide.net',
-    'https://daintree-warren-b9316d9c9237.herokuapp.com',
+    'daintree-warren-b9316d9c9237.herokuapp.com',
     'localhost'
 ]
 
