@@ -1,7 +1,6 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, reverse
 from .models import Product
 from django.contrib import messages
-
 
 def view_wishlist(request):
     """ A view that renders the wishlist contents page """
@@ -44,3 +43,19 @@ def add_to_wishlist(request, item_id):
     request.session['wishlist'] = wishlist
     print(request.session['wishlist'])
     return redirect(redirect_url)
+
+def remove_from_wishlist(request, item_id):
+    """ Remove a specified product from the wishlist """
+    wishlist = request.session.get('wishlist', {})
+    product = get_object_or_404(Product, pk=item_id)
+    
+    if str(item_id) in wishlist:
+        del wishlist[str(item_id)]
+        messages.success(request, f"'{product.name}' has been removed from your wishlist.")
+    else:
+        messages.warning(request, f"'{item_id}' was not found in your wishlist.")
+
+    request.session.pop('removed_product', None)
+    
+    request.session['wishlist'] = wishlist
+    return redirect(reverse('view_wishlist'))

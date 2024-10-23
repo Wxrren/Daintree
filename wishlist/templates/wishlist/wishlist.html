@@ -32,6 +32,7 @@
                                 <th scope="col"></th>
                                 <th scope="col">Price</th>
                                 <th scope="col">Go To Product</th>
+                                <th scope="col">Remove From Wishlist</th>
                             </tr>
                         </thead>
 
@@ -51,7 +52,15 @@
                                     <a href="{{ item.url }}" class="btn btn-outline-orange rounded-0 mt-5">
                                         <span class="text-uppercase">Take Me To Product</span>
                                         <span class="icon">
-                                            <i class="fas fa-lock"></i>
+                                            <i class="fas fa-cart-shopping"></i>
+                                        </span>
+                                    </a>
+                                </td>
+                                <td class="py-3">
+                                    <a href="{% url 'remove_from_wishlist' item.id %}" class="btn btn-outline-orange rounded-0 mt-5">
+                                        <span class="text-uppercase">Remove Product</span>
+                                        <span class="icon">
+                                            <i class="fas fa-x"></i>
                                         </span>
                                     </a>
                                 </td>
@@ -73,3 +82,4 @@
 </div>
 
 {% endblock %}
+
