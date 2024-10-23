@@ -1,0 +1,1 @@
+web: gunicorn daintree-warren.wsgi:application
