@@ -143,45 +143,45 @@ For the background of other pages and the navbar I chose a green colour to match
 
 ### Typography
 
-* For the fonts I worked with the fonts on materialise - These fonts are:
-  * -apple-system
-  * BlinkMacSystemFont
-  * "Segoe UI"
-  * Roboto
-  * Oxygen-Sans
-  * Ubuntu
-  * Cantarell
-  * "Helvetica Neue"
-  * sans-serif. 
+* For the fonts I worked with the fonts on google fonts - These fonts are:
+  * Pacifico
+  * Helvetica
+
   
 This covers a range of devices such as iOS, windows, android ETC.
 
-I changed the font weight, to make it bolder and more readable. The result was a text that looked fitting for a kids christmas themed website.
+I changed the font weight, to make it bolder and more readable. The result was a text that looked fitting for a website intending users to buy products. It makes it easy to read when looking for products.
 
 ### WireFrames
 
 I created my wireframes using balsamiq wireframes. I found this simple and effective for assessing the sites appearance as it had a variety of ready available tools representing different parts of a website so I was able to design it how I envisioned it.
 
 ## Features
-* View other peoples christmas lists.
-* Create, view, edit and delete christmas lists of your own
-* Responsive on all device sizes.
+* Search and view a variety of products.
+* Have the option to register for an account with Daintree.
+* Add, view, edit, and delete items within the users cart.
+* Create wishlists of your own, as well as to add, view, edit, and delete products within the wishlists.
+* Purchase products from the website.
+* View history of all products ordered from the website.
+* Enquire about products sold on the website.
+* Mark enquiries as resolved for users with or without an account.
+* Responsive on all device sizes
 
 ### Existing Features
 
 #### Landing Page
 
-![Landing page for site.](santashelpers/static/images/landing-page.png "Landing page")
+![Landing page for site.](/website_page_images/landing_page_website.png "Landing page")
 
 * First thing you see as you open the site.
-* Gives the user an idea of what the site will be like when they register with the reveal + symbol that shows a christmas list.
-* Register and sign in buttons front and center so that users can get into the action quickly.
+* Gives the user an idea of what the site offers.
+* Register and sign in buttons front and centre so that users can search and view products quickly and easily.
 
 
-#### View every user's list
+#### Profile
 
-![An image showing every user's list.](santashelpers/static/images/mainpage.png "Main page")
-
+![An image showing every user's list.](santashelpers/static/images/mainpage.png "Profile");                            
+                                
 * Operates as the main homepage showing every user's list. The idea is to help potentially give people inspiration for their own lists.
 * Each card has a modal that pops up revealing their list for all users to see.
 * An edit and delete button so users can edit or delete their lists. This can only be done for their own lists so the buttons will not show on other users lists.
