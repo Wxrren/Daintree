@@ -180,39 +180,47 @@ I created my wireframes using balsamiq wireframes. I found this simple and effec
 
 #### Profile
 
-![An image showing every user's list.](santashelpers/static/images/mainpage.png "Profile");                            
+![An image showing every user's profile.](/website_page_images/profile_page.png "Profile Page")                       
                                 
-* Operates as the main homepage showing every user's list. The idea is to help potentially give people inspiration for their own lists.
-* Each card has a modal that pops up revealing their list for all users to see.
-* An edit and delete button so users can edit or delete their lists. This can only be done for their own lists so the buttons will not show on other users lists.
-* Each list reveals the username of the user who created it and the title they chose to give the list.
+* Allows customer to edit their shipping information at any time
+* Displays an order history. The enquiry number is a link that takes the customer back to their original success checkout page.
 
 
-#### My lists
-![An image showing the users lists and a create list button](santashelpers/static/images/my_lists.png "My lists")
 
-* Displays all lists made by the user.
-* Option to edit or delete their lists.
-* Button to add their own lists. From here users are redirected to a form they complete their christmas list on and then submit it to the website. This is seen below here:
-![An image showing the create list form](santashelpers/static/images/add-list.png "Add List")
+#### Wishlist
+![An image showing the users lists](/website_page_images/wishlist.png "My lists")
 
-#### Edit Page
-![An edit page](santashelpers/static/images/edit-page.png "Edit")
-* Displays's previous lists answers to be edited
-* Pops
-![An edit page](santashelpers/static/images/edit-modal.png "Edit")
+* Displays all wishlists made by the user.
+* Option to delete the product and to be taken to the product page when you are ready to purchase.
 
 
-#### Delete Button
-![A delete button](santashelpers/static/images/delete-modal.png "Delete")
-* Delete button to easily allow users to discard current or old lists
-* Modal pops up to avoid accidentally clicking the delete button and losing the list. 
+#### Product Management page
+![An edit page](/website_page_images/product_page.png "Product Management")
+* Admin ability to add a product to store and upload an image. They can fill out all details and use the drop down to select the correct category.
+
+
+#### All products
+![display all products](/website_page_images/all_products.png "all Products")
+* Display all products on the page. The list loads 100 products at a time.
+* Admin superusers can press the edit or delete buttons to edit the products or delete them.
+* There is a button to bring you back to the top of the page. 
+
+#### Product details
+![display individual products](/website_page_images/product_details_page.png "Product Details")
+* Display an individual product on the page that display all information about price, ratings, descriptions.
+* Users can adjust the quantitites of the amount they want to add to their bag.
+* If the item is a clothing item users can select the sizes they want to purchase.
+* When added to your cart a toast will pop up displaying the product infortmation in your car giving you the option to go straight to the checkout. 
 
 #### Search Bar
-![A search bar](santashelpers/static/images/search-bar.png "Search")
-* Allows user's to easily search for other usernames and bring up their lists.
-* No user's shown until name is written. One name is searched their lists appear.
-![A search bar](santashelpers/static/images/search-bar-result.png "Search")
+![A search bar](/website_page_images/search_bar.png "Search")
+* Allows user's to easily search for specific items on the product page.
+* The search results will bring up the selected products with a count of how many are in the store. If there is no items it will show that no user queries come up.
+
+#### Pagination
+![A search bar](/website_page_images/search_bar.png "Search")
+* Allows user's to easily search for specific items on the product page.
+* The search results will bring up the selected products with a count of how many are in the store. If there is no items it will show that no user queries come up.
 
 ## Features Left to Implement
 
