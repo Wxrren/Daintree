@@ -218,28 +218,62 @@ I created my wireframes using balsamiq wireframes. I found this simple and effec
 * The search results will bring up the selected products with a count of how many are in the store. If there is no items it will show that no user queries come up.
 
 #### Pagination
-![A search bar](/website_page_images/search_bar.png "Search")
-* Allows user's to easily search for specific items on the product page.
-* The search results will bring up the selected products with a count of how many are in the store. If there is no items it will show that no user queries come up.
+![Page Numbers](/website_page_images/pagination.png "Search")
+* Spreads the large amount of products across different pages. 
+* Keeps performance up as the site isn't trying to render all 4000 products at once.
+
+#### Enquiries Admin View
+![Enquiries Page Admin View](/website_page_images/enquiries_admin.png "Enquiries")
+* Able to view all enquiries that customers have logged on the site.
+* displays contact details for the staff to contact the customer
+* Able to mark as resolved once customer is spoken to.
+
+#### Enquiries Customer View
+![Enquiries Page Customer  View](/website_page_images/enquiries_customer.png "Enquiries")
+* Form to submit their enquiries on the website.
+* Submittal takes them to a page confirming the enquiry has been sent and assigning them an enquiry number.
+* Able to track previous enquiries made and have the option to mark their enquiry as resolved themselves.
+
+### Cart
+![Shopping Cart](/website_page_images/cart.png "Cart")
+* Displays items user's have added to their cart.
+* Users can adjust the quantity in the cart and remove the items from the cart.
+* Displays pricing information and informs the customer how much extra they need to spend to get free delivery.
+
+### Cart
+![Checkout](/website_page_images/Checkout.png "Checkout")
+* Displays items from the users card and pricing information.
+* Form to fill out delivery and card details.
+* Checkout page redirects to a sucess page that displays the order, delivery and pricing information as well as assigns the user an order number. This can be viewed again from the order history in profile page.
 
 ## Features Left to Implement
 
-* Friends and interactivity
+* E-mail functionality
    
-    * To build a community and allow familys to connect with eachother and share their lists I would like to have given users the option to add other users as a friend. I would also have liked to allow them to interact with list by liking them.
+    * verification for registration, user order confirmation and confirmation of enquiries raised.
 
-* Letter to santa
+* Wishlist - Add to Cart button
 
-    * I would like to allow user's to have a personalised response in a letter from santa based on the responses they put in their lists.
+    * Currently the wishlist redirects to the product details page if they choose to purchase the product. I would like users to be able to add the item to cart from the wishlists page.
 
-* Super user
-    * I would like a user to be a moderator of the website. This feature would include another page bringing up a list of users on the website. They can either time out or ban users if innapropriate content is posted.
+* Anonymous Enquiries.
+
+    * I would like anonymous users to be able to raise an enquiry without having to sign in and use the assigned an enquiry number to view the enquiry and mark it as resolved.
+
+* Product Tracking.
+
+    * I would like to be able to track products that are being frequently purchased in order to create a page of trending products to recommend to users.
+
+* Public Wishlists.
+
+    * I would like wishlists to be public in order for them to be shared with other individuals. This would allow other individuals to view or purchase these products - even leave comments on the wishlisted items page.
+
 
     ## Bugs
 
 | Problem         | Action           | Status  |
 | ------------------------------------------------|:--------------------------------------:| -----:|
-| Forms not posting to the Database.| Intial "User" class was not allowing itself to be added to database or deleted in anyway. Created a new model table called Activeuser. This allowed forms to post and user details to be saved to the database/session| Fixed |
+| Users being taken to the super user page when marking their enquiry as resolved.| Intial "User" class was not allowing itself to be added to database or deleted in anyway. Created a new model table called Activeuser. This allowed forms to post and user details to be saved to the database/session| Fixed |
 |  Issue with nav home button taking you back to register page when pressing home button.| Home button was connected to the landing page. I wanted it to redirect to this page when not signed in but the main page when signed in. Created an if statement that checked if the username was in session. If it was it takes you to the main page and if you are not signed in you get redirected to the landing page. I also applied this if statement to the brand logo.    |   Fixed |
 | Relationship not correctly setup. | Issue with the relationships being setup incorrecly so that the db was requiring the user's ID to be filled in when submitting a form. Removed all databases from PSQL and then corrected the usermodels to reflect  the lists and folders in Activeuser model so set the relationship and tie the user to the lists.|    Fixed |
 | Forms not posting to DB.| Route incorrectly setup. Checked if method -- post. From here I then created variables retrieving the form data. From here I applied them to a new instance under a new variable. I then commited that variable to the session and the form posted to the database.    |    Fixed |
