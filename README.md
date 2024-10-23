@@ -5,7 +5,7 @@ Daintree is a fully functioning e-commerced storefront offering various products
 Users can use the search function to find desired products sold by Daintree. User's have the option to register to the website to track their previous orders and purchase a variety of products from the websites storefront. They can also go to create and view their own wishlists before comitting to a purchase within their cart. Users are also able to view, edit and delete from their own wishlists at any time with ease.
 
 
-
+![An images showing the website being responsive across multiple devices](/media/responsive.png "Resonsive site")
 
 
 [You can visit the Daintree here](https://daintree-warren-b9316d9c9237.herokuapp.com)
@@ -89,56 +89,42 @@ I chose to keep the pages simple and clean.
 <details>
 <summary>Landing Page Wireframe.</summary>
 
-![Landing page for website.](santashelpers/static/images/wireframe-landing-page.png "Landing Page")
+![Landing page for website.](/wireframes/landing-page.png "Landing Page")
 
 </details>
 
 <details>
 <summary>Registration page Wireframe.</summary>
 
-![Registration page for website.](santashelpers/static/images/wireframe-register-page.png "Registration page")
+![Registration page for website.](/wireframes/register.png "Registration page")
 
 </details>
 
 <details>
 <summary>Sign in page Wireframe.</summary>
 
-![Sign in page for website.](santashelpers/static/images/wireframe-sign-in-page.png "Sign in page")
+![Sign in page for website.](/wireframes/sign_in.png "Sign in page")
 
 </details>
 
 <details>
-<summary>Main page Wireframe.</summary>
+<summary>Products Page.</summary>
 
-![Main page for website.](santashelpers/static/images/wireframe-main-page.png "Main page")
-
-</details>
-
-<details>
-<summary>My lists page Wireframe.</summary>
-
-![My lists page for website.](santashelpers/static/images/wireframe-my_lists-page.png "My lists page")
+![Main page for website.](/wireframes/products.png "Products page")
 
 </details>
 
 <details>
-<summary>Add/edit list page Wireframe.</summary>
+<summary>Product Details.</summary>
 
-![add/edit list page for website.](santashelpers/static/images/wireframe-add-and-edit-list-page.png "add/edit list page")
-
-</details>
-
-<details>
-<summary>Delete modal Wireframe.</summary>
-
-![Delete modal for website.](santashelpers/static/images/wireframe-delete-modal.png "Delete modal page")
+![My lists page for website.](/wireframes/product-details-page.png "Product Details Page")
 
 </details>
 
 <details>
-<summary>Search Page Wireframe.</summary>
+<summary>Profiles.</summary>
 
-![Search Page for website.](santashelpers/static/images/wireframe-search-page.png "Search page")
+![add/edit list page for website.](/wireframes/Profiles.png "Profiles Page")
 
 </details>
 
@@ -147,13 +133,13 @@ I chose to keep the pages simple and clean.
 
 ### Colour
 
-The colour scheme I wanted for the website kept the theme of simple and clean. I also wanted to continue the christmas theme so I chose a series of red's, green's and amber yellow's. I used images for the navbar and footer of a christmas wreath containing those colours and a amber yellow text so that it looks like christmas lights.
+The colour scheme I wanted for the website kept the theme of simple, clean, and modern. I chose a natural feel and tone to link with the websites name, ‘Daintree’, using green and orange tones. For the background on the landing page, I chose an image of the Daintree rainforest with an individual exploring, to symbol users exploring the website.
 
-For the background I chose a white page with an image of christmas trees that maintain the 3 core colours.
+For the background of other pages and the navbar I chose a green colour to match green tones from the landing page image and represent a rainforest.
 
 * Main colours used on the website:
-    * Text Colour: #ffc107 - This was chosen as a nice standout colour from the greens and reds. I also aimed for it to look like christmas lights among the wreath.. 
-    * Modals and button colours: #f44336, #1b5e20,  - This was to keep with the theme of christmas. It also helped represent postive or negative actions such a green for edit and red for delete.
+    * Text Colour: rgb(250, 83, 6) - This was chosen as a nice standout colour from the greens. I feel this stood out well against the green and kept a tropical rainforest theme.
+    * Background colour: #002222 - This was to keep with the theme of a rainforest and match the tones in the landing page background image.
 
 ### Typography
 
