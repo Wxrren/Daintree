@@ -26,16 +26,17 @@
             {% if wishlist_items %}
                 <div class="table-responsive rounded">
                     <table class="table table-sm table-borderless">
-                        <thead class="text-black">
+                        <thead class="text-orange">
                             <tr>
                                 <th scope="col">Item</th>
                                 <th scope="col"></th>
                                 <th scope="col">Price</th>
+                                <th scope="col">Go To Product</th>
                             </tr>
                         </thead>
 
                         {% for item in wishlist_items %}
-                                <tr>
+                                <tr class="text-orange">
                                     <td class="p-3 w-25">
                                         <img class="img-fluid rounded" src="{{ item.product.image.url }}">
                                     </td>
@@ -46,11 +47,9 @@
                                     <td class="py-3">
                                         <p class="my-0">${{ item.product.price }}</p>
                                     </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="5" class="text-right">
+                                    <td class="py-3">
                                         <a href="" class="btn btn-black rounded-0 btn-lg">
-                                            <span class="text-uppercase">Add To Bag</span>
+                                            <span class="text-uppercase">Take Me To Product</span>
                                             <span class="icon">
                                                 <i class="fas fa-lock"></i>
                                             </span>
