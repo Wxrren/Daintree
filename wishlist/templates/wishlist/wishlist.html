@@ -36,26 +36,26 @@
                         </thead>
 
                         {% for item in wishlist_items %}
-                                <tr class="text-orange">
-                                    <td class="p-3 w-25">
-                                        <img class="img-fluid rounded" src="{{ item.product.image.url }}">
-                                    </td>
-                                    <td class="py-3">
-                                        <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                                        <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
-                                    </td>
-                                    <td class="py-3">
-                                        <p class="my-0">${{ item.product.price }}</p>
-                                    </td>
-                                    <td class="py-3">
-                                        <a href="" class="btn btn-outline-orange rounded-0 mt-5">
-                                            <span class="text-uppercase">Take Me To Product</span>
-                                            <span class="icon">
-                                                <i class="fas fa-lock"></i>
-                                            </span>
-                                        </a>
-                                    </td>
-                                </tr>
+                            <tr class="text-orange">
+                                <td class="p-3 w-25">
+                                    <img class="img-fluid rounded" src="{{ item.image_url }}">
+                                </td>
+                                <td class="py-3">
+                                    <p class="my-0"><strong>{{ item.name }}</strong></p>
+                                    <p class="my-0 small text-muted">SKU: {{ item.sku }}</p>
+                                </td>
+                                <td class="py-3">
+                                    <p class="my-0">${{ item.price }}</p>
+                                </td>
+                                <td class="py-3">
+                                    <a href="{{ item.url }}" class="btn btn-outline-orange rounded-0 mt-5">
+                                        <span class="text-uppercase">Take Me To Product</span>
+                                        <span class="icon">
+                                            <i class="fas fa-lock"></i>
+                                        </span>
+                                    </a>
+                                </td>
+                            </tr>
                         {% endfor %}
                     </table>
                 </div>

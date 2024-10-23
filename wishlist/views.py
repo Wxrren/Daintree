@@ -9,18 +9,24 @@ def view_wishlist(request):
     wishlist_items = []
 
     for item_id in wishlist.keys():
-        product = get_object_or_404(Product, pk=item_id)
-        wishlist_items.append({
-            'item_id': item_id,
-            'product': product,
-        })
+        try:
+            product = get_object_or_404(Product, pk=item_id)
+            wishlist_items.append({
+                'id': item_id,
+                'name': product.name,
+                'image_url': product.image.url,
+                'price': product.price,
+                'sku': product.sku.upper(),
+                'url': f"/products/{item_id}",
+            })
+        except Product.DoesNotExist:
+            messages.warning(request, f"Product with ID {item_id} not found in the database.")
 
     context = {
         'wishlist_items': wishlist_items,
         'product_count': len(wishlist),
     }
     return render(request, 'wishlist/wishlist.html', context)
-
 
 def add_to_wishlist(request, item_id):
     """ Add a specified product to the wishlist """
@@ -32,7 +38,7 @@ def add_to_wishlist(request, item_id):
     if str(item_id) in wishlist:
         messages.info(request, f"'{product.name}' is already in your wishlist.")
     else:
-        messages.success(request, f"'{product.name}' is addec to your wishlist.")
+        messages.success(request, f"'{product.name}' is added to your wishlist.")
         wishlist[str(item_id)] = 1
 
     request.session['wishlist'] = wishlist
