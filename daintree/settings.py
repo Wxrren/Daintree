@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get(
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
     '8000-wxrren-daintree-17e0emw7ah9.ws.codeinstitute-ide.net',
