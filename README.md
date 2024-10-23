@@ -1,16 +1,14 @@
-# Santas Helpers
+# Daintree
 
-Santas Helpers is a simple website that helps kids send their christmas letters over to santa.
+Daintree is a fully functioning e-commerced storefront offering various products from clothing, homeware, toys, and electronics.
 
-User's can register to join the site and view lists created by all other users if they need some inspiration. They can also go to create and view their own lists. Users are also able to edit and delete their own lists at any time with ease!
-
-Users can also use the search function to find the lists made by certain users by writing their username into the search bar. Parents looking to see what their kids have sent to santa will have an easy way to take a peak!
-
- 
-![An images showing the website being responsive across multiple devices](santashelpers/static/images/santas-helpers-responsive.png "Resonsive site")
+Users can use the search function to find desired products sold by Daintree. User's have the option to register to the website to track their previous orders and purchase a variety of products from the websites storefront. They can also go to create and view their own wishlists before comitting to a purchase within their cart. Users are also able to view, edit and delete from their own wishlists at any time with ease.
 
 
-[You can visit the Santas Helpers website here](https://santashelpers-bddb45353cba.herokuapp.com)
+
+
+
+[You can visit the Daintree here](https://daintree-warren-b9316d9c9237.herokuapp.com)
 ------
 
 ## Table of Contents
@@ -47,15 +45,16 @@ Users can also use the search function to find the lists made by certain users b
 
 ## User Experience (UX)
 
-There is a clear navigation in the nav bar which directs you on where to view your individual lists where you can also create your own lists. Then navbar also clearly directs you to the search function where you can search for individual users.
+There is a clear navigation in the nav bar which directs you on where to view products to purchase or add to wishlists or cart. Then navbar also clearly directs you to the search function where you can search for individual users.
 
-The website is designed to be simple so that ypung children can use it to make their christmas lists. For this reason I kept the pages plane with content central of the screen. User's card's appear in the middle of the screen with flashing + icons and instructions on the top of the page indicating to click the + to view the list. The edit and delete buttons are attached to the cards to make it easier.
+The website is designed to be simple and modern so that all users can find up to date and trending products they are seeking. For this reason, I kept the pages with contents of products central of the screen displaying 100 products per page. Products can be clicked on to view photos and descriptions of selected product. The product can then be added to the users wishlist or cart.
+
 
 To make the user experience easy - I wanted the site to have:
 
-* A simple and easy registration and sign up form.
+* A simple and easy registration and sign up form
 * A simple nav bar for children to get around the site easily.
-* A simple UI. I wanted minimal buttons appearing on the screen to make it less cluttered focussing only on what they need to view lists or make their own.
+* A simple UI. I wanted a minimal and clean design appearing on the screen to make it less cluttered offering categories with products Daintree sells to align with what products they are searching for
 
 
 ## User Stories
@@ -64,23 +63,25 @@ To determine which approach to take with site features I determined the goals of
 ### User
 
 * First time User Goals
-    * As a user I want to understand the main purpose of the site immediately and have a fast way to get involved.
-    * As a user I want to understand how I can create lists or view other peoples easily.
-    * As a user I want to be able to easily navigate the site.
+    * As a user, I want to understand the variety of products the website sells.
+    * As a user, I want to understand how I can create an account or wishlist.
+    * As a user, I want to understand how I can add a product to my cart in order to purchase a product from the website.
+    * As a user, I want to understand how to easily navigate the site with simple and clear descriptions of what each page offers or entails.
     
 * Returning User Goals
-    * As a user I want to be get straight into the action and sign in easily.
-    * As a user I want to be able to easily edit my lists or delete old ones.
-    
+    * As a user, I want to get registered with an account and be able to sign in easily.
+    * As a user, I want to be able to easily edit my wishlists or cart by being able to add or delete products to either.
+    * As a user, I want to understand how to enquire about a product or order, and view when these enquiries have been resolved.
+
 * Frequent User Goals
-    * As a user I want to be able to get started quickly
-    * As a user I want to see a simple and easy website with no added bloat since the last attempt.
+    * As a user, I want to be able to get started with my product searches quickly and with ease.
+    * As a user, I want to see a simple, easy, and modern website with no added bloat since the last visit.
 
 ## Wire Frames
 
-When designing this website I intended to have a very minimal design that didn't distract from the main purpose.
+When designing this website, I intended to have a very minimal yet modern design that showed the websites main purpose.
+I chose to keep the pages simple and clean. 
 
-I chose to keep simple and clean pages and make usage of modals for viewing lists to stop users having to go back and forth to different pages for user's lists and also for deleting lists to make sure accidental deletion doesn't happen.
 
 ### Wireframe for Desktop, Tablet and Mobile.
 
