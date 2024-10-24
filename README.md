@@ -481,7 +481,15 @@ Testing consisted of using the W3C Markup and CSS Validator to go through each p
 | ------------- |:-------------:| 
 | User Registration posts to Database      | Pass | 
 | User is able to sign in with the details input in the registration form   | Pass      |
-| Modals pop up on screen when buttons are pressed or conditions such as editing or deleting lists | Pass      |
+| User is able to search for products in the search bar | Pass      |
+| User is able to select product categories via the dropdown menu | Pass      |
+| User is able to browse 100 products on the page and click between the pagination page numbers to find more | Pass      |
+| User is able to view the individual product pages| Pass      |
+| User is able to filter the products between low=high, a-z ETC and continue those filters when moving to a different page on the pagination page numbers      | Pass
+| User is able to select the quantity and sizes they want and add them to their basket    | Pass
+| User is able to add and remove products from their wishlist | Pass
+| User is able to fill in their delivery info and check out   | Pass
+| User is able to submit enquiries on the page, track their enquiries and mark them as resolved. | Pass
 | Site works correctly on Android mobile device. | Pass      |
 | Site works correctly on Apple mobile device. | Pass      |
 | Site works correctly on Apple tablet device. | Pass      |
@@ -497,7 +505,8 @@ Testing consisted of using the W3C Markup and CSS Validator to go through each p
 <details>
 <summary>Home Page</summary>
 
-![Lighthouse scores for index page on mobile.](santashelpers/static/images/lighthouse%20mobile.png "Index mobile")
+![Lighthouse scores for index page on mobile.](/website_page_images/lighthouse_desktop.png "Index mobile")
+* Part of the performance issues stem from bootstrap CDN, Fontawesome, Stripe and extensions I have on my browser.
 
 </details>
 
@@ -506,7 +515,7 @@ Testing consisted of using the W3C Markup and CSS Validator to go through each p
 <details>
 <summary>Home Page</summary>
 
-![Lighthouse scores for index page on Desktop.](santashelpers/static/images/lighthouse%20desktop.png "Index desktop")
+![Lighthouse scores for index page on Desktop.](/website_page_images/lighthouse_desktop.png"Index desktop")
 
 </details>
 
@@ -517,6 +526,9 @@ Testing consisted of using the W3C Markup and CSS Validator to go through each p
 * [Javascript](https://en.wikipedia.org/wiki/JavaScript)
 * [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 * [PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL)
+* [Psycopg2](https://pypi.org/project/psycopg2/)
+
+
 
 
 
@@ -526,10 +538,13 @@ Testing consisted of using the W3C Markup and CSS Validator to go through each p
     * Used to write the code/README.
 
 * [Git](https://git-scm.com)
-    *  Tracking changes in my course code and pushing them to github.
+    *  Version control and pushing them to github.
 
 * [Github](https://github.com)
     * To store my code/files and deploy my website.
+
+* [Gitpod](https://www.gitpod.io)
+    * Used as a cloud-based IDE for development.
 
 * [Google Fonts](https://fonts.google.com)
     * Used for importing my main font for the website
@@ -537,17 +552,37 @@ Testing consisted of using the W3C Markup and CSS Validator to go through each p
 * [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
     * Used for making web development faster. My usage was for card columns + forms.
 
-* [Icons8](https://icons8.com/icons)
-    * Hamburger icon for mobile Nav bar toggler.
+* [Fontawesome](https://fontawesome.com/icons)
+    * Icons for website.
+
+* [Django](https://www.djangoproject.com)
+    * Used as the Python framework for the site.
+
+* [Heroku](https://www.heroku.com)
+    * Used for hosting the deployed back-end site.
+
+* [Stripe](https://stripe.com/gb)
+    * Used for online secure payments of ecommerce products/services.
+
+* [AWS S3](https://aws.amazon.com/s3/)
+    * Used for online secure payments of ecommerce products/services.
+
+* [Allauth](https://docs.allauth.org/en/latest/)
+    * Used as the user authentication system.
+
+* [Pillow](https://pypi.org/project/pillow/)
+    * Used as the Python framework for the site.
+
+* [Gunicorn](https://docs.gunicorn.org/en/stable/index.html)
+    * Used for WSGI server
+
+* [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/)
+    * Used for auto-formatting of front-end forms
 
 * [Am I Responsive](https://ui.dev/amiresponsive)
     * Mock picture for README file.
 
-* [Materialize](https://materializecss.com/typography.html)
-    * Used for making web development faster. My usage was for card columns + forms
 
-* [Flask](https://flask.palletsprojects.com/en/3.0.x/)
-    * A microframework used for scaling web apps faster. My usage was for creating a web page that handles data fast.
 
 ## Deployment and local Development.
 
