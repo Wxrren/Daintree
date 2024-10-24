@@ -1,57 +1,20 @@
-// ------------------------TopNav----------------------------------------
-function contactHover() {
-    document.getElementById("contact-hover").style.backgroundColor = "white";
+
+function handleHover(elementId, backgroundColor) {
+    const element = document.getElementById(elementId);
+    element.style.backgroundColor = backgroundColor;
 }
 
-function contactNormal() {
-    document.getElementById("contact-hover").style.backgroundColor ="";
-}
 
-function accountHover() {
-    document.getElementById("account-hover").style.backgroundColor = "white";
-}
+document.addEventListener('DOMContentLoaded', () => {
+    const links = document.querySelectorAll('.nav-link');
 
-function accountNormal() {
-    document.getElementById("account-hover").style.backgroundColor ="";
-}
+    links.forEach(link => {
+        link.addEventListener('mouseover', () => {
+            handleHover(link.id, 'white');
+        });
 
-function cartHover() {
-    document.getElementById("cart-hover").style.backgroundColor = "white";
-}
-
-function cartNormal() {
-    document.getElementById("cart-hover").style.backgroundColor ="";
-}
-
-// ------------------------Main Nav----------------------------------------
-function productsHover() {
-    document.getElementById("products-hover").style.backgroundColor = "white";
-}
-
-function productsNormal() {
-    document.getElementById("products-hover").style.backgroundColor ="";
-}
-
-function clothingHover() {
-    document.getElementById("clothing-hover").style.backgroundColor = "white";
-}
-
-function clothingNormal() {
-    document.getElementById("clothing-hover").style.backgroundColor ="";
-}
-
-function homewareHover() {
-    document.getElementById("homeware-hover").style.backgroundColor = "white";
-}
-
-function homewareNormal() {
-    document.getElementById("homeware-hover").style.backgroundColor ="";
-}
-
-function techHover() {
-    document.getElementById("tech-hover").style.backgroundColor = "white";
-}
-
-function techNormal() {
-    document.getElementById("tech-hover").style.backgroundColor ="";
-}
+        link.addEventListener('mouseout', () => {
+            handleHover(link.id, '');
+        });
+    });
+});

@@ -1,7 +1,7 @@
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
         <li class="nav-item dropdown">
-            <a id="products-hover" onmouseover="productsHover()" onmouseout="productsNormal()" class="font-weight-bold nav-link text-orange mr-5" href="{% url 'products' %}?category={{ categories|join:', ' }}" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a id="products-link"  class="font-weight-bold nav-link text-orange mr-5" href="{% url 'products' %}?category={{ categories|join:', ' }}" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 All Products
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
@@ -13,7 +13,7 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a id="clothing-hover" onmouseover="clothingHover()" onmouseout="clothingNormal()" class="font-weight-bold nav-link text-orange mr-5" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a id="clothing-link" class="font-weight-bold nav-link text-orange mr-5" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Clothing
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
@@ -28,7 +28,7 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a id="homeware-hover" onmouseover="homewareHover()" onmouseout="homewareNormal()" class="font-weight-bold nav-link text-orange mr-5" href="#" id="homeware-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a id="homeware-link" class="font-weight-bold nav-link text-orange mr-5" href="#" id="homeware-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Homeware
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
@@ -39,7 +39,7 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a id="tech-hover" onmouseover="techHover()" onmouseout="techNormal()" class="font-weight-bold nav-link text-orange" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a id="tech-link" class="font-weight-bold nav-link text-orange" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Tech &amp; Toys
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">

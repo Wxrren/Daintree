@@ -63,8 +63,8 @@
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">             
                     <li class="list-inline-item dropdown mr-lg-3">
-                        <a id="contact-hover" class="text-orange nav-link" href="#" id="new-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <div class="text-center" onmouseover="contactHover()" onmouseout="contactNormal()">
+                        <a id="contact-link" class="text-orange nav-link" href="#" id="new-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="text-center">
                                 <div><i class="fas fa-regular fa-address-card fa-lg"></i></div>
                                 <p class="my-0">Contact Us</p>
                             </div>
@@ -81,8 +81,8 @@
                         </div>
                     </li>
                     <li class="list-inline-item dropdown">
-                        <a id="account-hover" class="text-orange nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <div class="text-center" onmouseover="accountHover()" onmouseout="accountNormal()">
+                        <a id="account-link" class="text-orange nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="text-center">
                                 <div><i class="fas fa-solid fa-image-portrait fa-lg"></i></div>
                                 <p class="my-0">My Account</p>
                             </div>
@@ -102,8 +102,8 @@
                         </div>
                     </li>
                     <li class="list-inline-item">
-                        <a id="cart-hover" class="{% if grand_total %}text-info font-weight-bold{% else %}text-orange{% endif %} nav-link" href="{% url 'view_cart' %}">
-                            <div class="text-center" onmouseover="cartHover()" onmouseout="cartNormal()">
+                        <a id="cart-link" class="{% if grand_total %}text-info font-weight-bold{% else %}text-orange{% endif %} nav-link" href="{% url 'view_cart' %}">
+                            <div class="text-center">
                                 <div><i class="fas fa-solid fa-cart-shopping fa-lg"></i></div>
                                 <p class="my-0">
                                     {% if grand_total %}
