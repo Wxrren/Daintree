@@ -21,13 +21,13 @@
     </div>
 </li>
 <li class="list-inline-item dropdown">
-    <a class="text-orange nav-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <a class="text-orange nav-link d-block d-lg-none" href="#" id="new-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
             <div><i class="fas fa-address-card fa-lg"></i></div>
             <p class="my-0">Contact us</p>
         </div>
     </a>
-    <div class="dropdown-menu border-0" aria-labelledby="user-options">
+    <div class="dropdown-menu border-0" aria-labelledby="new-dropdown">
         {% if request.user.is_authenticated %}
             {% if request.user.is_superuser %}
                 <a href="{% url 'superuser_enquiries' %}" class="dropdown-item">Customer Enquiries</a>
