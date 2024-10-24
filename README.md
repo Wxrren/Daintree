@@ -583,7 +583,6 @@ Testing consisted of using the W3C Markup and CSS Validator to go through each p
     * Mock picture for README file.
 
 
-
 ## Deployment and local Development.
 
 ### Relational Database Management System
@@ -600,15 +599,11 @@ This project uses Heroku to build, run, and operate applications entirely in the
 To achieve this you have to:
 
 * Generate the requirements.txt file with the following command in the terminal. After you run this command a new file called requirements.txt should appear in your root directory.
-![how to get requirements.txt .](santashelpers/static/images/requirements.png "Requirements")
 
-* Heroku requires a Procfile containing a command to run your program. Inside the root directory of your project create the new file. It must be called Procfile with a capital P, otherwise Heroku won’t recognise it. Inside the file, add the following command
+* Heroku requires a Procfile containing a command to run your program. Inside the root directory of your project create the new file. It must be called Procfile with a capital P, otherwise Heroku won’t recognise it.
 
-![Procfile command.](santashelpers/static/images/procfile-image.png "Procfile")
-
-* To ensure that SQLAlchemy can also read the external database, its URL needs to start with “postgresql://”, but You can not change this in the environment variable. Instead, make an addition to the else statement to adjust the DATABASE_URL in case it starts with postgres://:
-
-![An image showing the repository page with settings highlighted.](/santashelpers/static/images/db-for-loop.png "Settings")
+Inside the file, type: echo web: gunicorn app_name.wsgi > Procfile
+replace app_name with the name of your primary Django app name; the folder where settings.py is located
 
 *  ### Heroku Deployment
 
@@ -618,20 +613,24 @@ I used heroku to deploy the live site database. To do this you have to:
 * Choose a unique name for the app, select the region closest to you and click “Create app”
 * Go to the Settings tab of your new app and click reveal config vars.
 * Add each of your other environment variables except DEVELOPMENT and DB_URL from the env.py file as a Config Var. The result should look something like this:
-
-![An image showing the repository page with settings highlighted.](santashelpers/static/images/config%20vars.png "Settings")
 * Login to github, search for your repository and click Connect.
-* Now, your project is in place, It's time to take place adding tables to the database. Hit more then run console.
 
-![An image showing the repository page with settings highlighted.](santashelpers/static/images/run-console.png "Settings")
-* Type python3 into the console and click Run
-* Once loaded type:  from santashelpers import db to import our database. 
-Once this loads type: - db.create_all().
+## AWS S3
 
+This project uses [AWS](https://aws.amazon.com/s3/) to store media and static files online, due to the fact that Heroku doesn't persist this type of data.
 
+Once you've created an AWS account and logged-in, follow these series of steps to get your project connected. Make sure you're on the AWS Management Console page.
+
+### IAM
+
+* Search for ‘iam’ in the search bar at the top
+![IAM](/deployment/search_iam.png "IAM")
+
+* Click ‘User Groups’ on the left:
+ 
 ### Github 
 
-1.  Log in to GitHub and locate the GitHub santashelpers [Repository](https://github.com/Wxrren/Santas-Helpers)
+1.  Log in to GitHub and locate the GitHub Daintree
 2.  Locate the "Settings" button at the top of the repository as shown here:
 
 This project can be cloned or forked in order to make a local copy on your own system.
@@ -641,7 +640,7 @@ For either method, you will need to install any applicable packages found within
 pip3 install -r requirements.txt.
 
 #### How to Fork
-Make a copy of the original [Repository](https://github.com/Wxrren/Santas-Helpers) on my GitHub account to view and/or make changes without affecting the original owner's repository. You can fork this repository by using the following steps:
+Make a copy of the original [Repository](https://github.com/Wxrren/Dain) on my GitHub account to view and/or make changes without affecting the original owner's repository. You can fork this repository by using the following steps:
 
 * Log in to GitHub and locate the GitHub Repository
 * At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
@@ -651,12 +650,12 @@ Make a copy of the original [Repository](https://github.com/Wxrren/Santas-Helper
 
 You can clone the repository by following these steps:
 
-* Go to the GitHub [Repository](https://github.com/Wxrren/Santas-Helpers)
+* Go to the GitHub [Repository](https://github.com/Wxrren/daintree)
 * Locate the Code button above the list of files and click it
 * Select if you prefer to clone using HTTPS, SSH, or GitHub CLI and click the copy button to copy the URL to your clipboard
 * Open Git shell or Terminal
 * Change the current working directory to the one where you want the cloned directory
-* In your IDE Terminal, type the following command to clone my [Repository](https://github.com/Wxrren/Santas-Helpers)
+* In your IDE Terminal, type the following command to clone my [Repository](https://github.com/Wxrren/daintree)
 
 Press Enter to create your local clone.
 ## Credits
