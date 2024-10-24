@@ -291,53 +291,182 @@ Testing consisted of using the W3C Markup and CSS Validator to go through each p
 <details>
 <summary>HTML</summary>
 
-![HTML checker showing no errors on the index page.](santashelpers/static/images/html-validator.png "index")
+![HTML checker showing no errors on the index page.](/website_page_images/html%20validator.png "index")
 
 </details>
 
 <details>
 <summary>CSS</summary>
 
-![CSS checker showing no errors on the CSS Stylesheet.](santashelpers/static/images/css-validator.png "CSS")
+![CSS checker showing no errors on the CSS Stylesheet.](/website_page_images/css%20validator.png "CSS")
 
 </details>
 
 <details>
 <summary>Javascript</summary>
 
-![Javascript checker showing no errors on the javascript Stylesheet.](santashelpers/static/images/jasvascript%20validator.png "Javascript")
-* NOTE: jshint shows undefinined variables and unused variables. These variables are actually functions that are being called elsewhere. It is also an email.js API file that jshint is not recognising. Other than this, no other errors are present.
+![Javascript checker showing no errors on the javascript Stylesheet.](/website_page_images/js%20validator.png "Javascript")
+* NOTE: jshint shows an undefinined variable in stripe. These variables are actually functions that are being called elsewhere. Other than this, no other errors are present.
 
 </details>
 
 <details>
 <summary>Python Models</summary>
 
-![Python checker showing no errors on the Python Stylesheet.](/santashelpers/static/images/python-validators-models.png "Python")
+* Checkout
+![Python checker showing no errors on the Python Stylesheet.](/website_page_images/checkout_models.png "Python")
+
+* Contactus
+![Python checker showing no errors on the Python Stylesheet.](/website_page_images/contactus_models.png "Python")
+
+* Products
+![Python checker showing no errors on the Python Stylesheet.](/website_page_images/products_models.png "Python")
+
+* Profile
+![Python checker showing no errors on the Python Stylesheet.](/website_page_images/profile_models.png "Python")
+
+* Wishlist
+![Python checker showing no errors on the Python Stylesheet.](/website_page_images/wishlist_models.png "Python")
 
 </details>
 
 <details>
-<summary>Python Routes</summary>
+<summary>Python Admin</summary>
 
-![Python checker showing no errors on the Python Stylesheet.](/santashelpers/static/images/python-validators-route.png "Python")
+* Checkout
+![Python checker showing no errors on the Python Stylesheet.](/website_page_images/checkout_admin.png "Python")
+
+* Contactus
+![Python checker showing no errors on the Python Stylesheet.](/website_page_images/contactus_admin.png "Python")
+
+* Products
+![Python checker showing no errors on the Python Stylesheet.](/website_page_images/products_admin.png "Python")
 
 </details>
 
 <details>
-<summary>Python run</summary>
+<summary>Python Apps</summary>
 
-![Python checker showing no errors on the Python Stylesheet.](/santashelpers/static/images/python-validators-run.png "Python")
+* Cart
+![Python checker showing no errors on the Python Stylesheet.](/website_page_images/cart_apps.png "Python")
+
+* Checkout
+![Python checker showing no errors on the Python Stylesheet.](/website_page_images/checkout_apps.png "Python")
+
+* Contactus
+![Python checker showing no errors on the Python Stylesheet.](/website_page_images/contactus_apps.png "Python")
+
+* Products
+![Python checker showing no errors on the Python Stylesheet.](/website_page_images/products_apps.png "Python")
+
+* Profile
+![Python checker showing no errors on the Python Stylesheet.](/website_page_images/profiles_apps.png "Python")
+
+* Wishlist
+![Python checker showing no errors on the Python Stylesheet.](/website_page_images/wishlist_apps.png "Python")
 
 </details>
 
 <details>
-<summary>Python init</summary>
+<summary>Python Context</summary>
 
-![Python checker showing no errors on the Python Stylesheet.](/santashelpers/static/images/python-validators-init.png "Python")
+* Cart
+![Python checker showing no errors on the Python Stylesheet.](/website_page_images/cart_contexts.png "Python")
 
 </details>
 
+<details>
+<summary>Python Signals</summary>
+
+* Checkout
+![Python checker showing no errors on the Python Stylesheet.](/website_page_images/checkout_signals.png "Python")
+
+</details>
+
+<details>
+<summary>Python Widgets</summary>
+
+* Products
+![Python checker showing no errors on the Python Stylesheet.](/website_page_images/products_widgets.png "Python")
+
+</details>
+
+<details>
+<summary>Python Webhooks</summary>
+
+* Webhook
+![Python checker showing no errors on the Python Stylesheet.](/website_page_images/checkout_webhook.png "Python")
+
+* Webhook Handler
+![Python checker showing no errors on the Python Stylesheet.](/website_page_images/checkout_webhook_handler.png "Python")
+
+</details>
+
+<details>
+<summary>Python Forms</summary>
+
+* Checkout
+![Python checker showing no errors on the Python Stylesheet.](/website_page_images/checkout_forms.png "Python")
+
+* Contactus
+![Python checker showing no errors on the Python Stylesheet.](/website_page_images/contactus_forms.png "Python")
+
+* Products
+![Python checker showing no errors on the Python Stylesheet.](/website_page_images/products_forms.png "Python")
+
+* Profile
+![Python checker showing no errors on the Python Stylesheet.](/website_page_images/profile_forms.png "Python")
+
+</details>
+
+<details>
+<summary>Python URL's</summary>
+
+* Cart
+![Python checker showing no errors on the Python Stylesheet.](/website_page_images/cart_urls.png "Python")
+
+* Checkout
+![Python checker showing no errors on the Python Stylesheet.](/website_page_images/checkout_urls.png "Python")
+
+* Contactus
+![Python checker showing no errors on the Python Stylesheet.](/website_page_images/contactus_urls.png "Python")
+
+* Daintree - Main settings
+![Python checker showing no errors on the Python Stylesheet.](/website_page_images/daintree_urls.png "Python")
+
+* Products
+![Python checker showing no errors on the Python Stylesheet.](/website_page_images/products_urls.png "Python")
+
+* Profile
+![Python checker showing no errors on the Python Stylesheet.](/website_page_images/profile_urls.png "Python")
+
+* Profile
+![Python checker showing no errors on the Python Stylesheet.](/website_page_images/wishlist_urls.png "Python")
+
+</details>
+
+<details>
+<summary>Python views</summary>
+
+* Cart
+![Python checker showing no errors on the Python Stylesheet.](/website_page_images/cart_views.png "Python")
+
+* Checkout
+![Python checker showing no errors on the Python Stylesheet.](/website_page_images/checkout_views.png "Python")
+
+* Contactus
+![Python checker showing no errors on the Python Stylesheet.](/website_page_images/contactus_views.png "Python")
+
+* Products
+![Python checker showing no errors on the Python Stylesheet.](/website_page_images/products_views.png "Python")
+
+* Profile
+![Python checker showing no errors on the Python Stylesheet.](/website_page_images/profile_views.png "Python")
+
+* Profile
+![Python checker showing no errors on the Python Stylesheet.](/website_page_images/wishlist_views.png "Python")
+
+</details>
 
 
 ### Manual Testing
