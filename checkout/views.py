@@ -4,7 +4,6 @@ from django.shortcuts import (
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
-from .email_utils import send_order_confirmation_email
 
 from .forms import OrderForm
 from .models import Order, OrderLineItem
@@ -63,8 +62,6 @@ def checkout(request):
             order.stripe_pid = pid
             order.original_cart = json.dumps(cart)
             order.save()
-
-            send_order_confirmation_email(order)
 
             for item_id, item_data in cart.items():
                 try:
