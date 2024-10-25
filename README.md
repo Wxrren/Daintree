@@ -240,7 +240,7 @@ I created my wireframes using balsamiq wireframes. I found this simple and effec
 * Users can adjust the quantity in the cart and remove the items from the cart.
 * Displays pricing information and informs the customer how much extra they need to spend to get free delivery.
 
-### Cart
+### Checkout
 ![Checkout](/website_page_images/Checkout.png "Checkout")
 * Displays items from the users card and pricing information.
 * Form to fill out delivery and card details.
