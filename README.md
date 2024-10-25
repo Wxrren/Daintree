@@ -515,7 +515,7 @@ Testing consisted of using the W3C Markup and CSS Validator to go through each p
 <details>
 <summary>Home Page</summary>
 
-![Lighthouse scores for index page on Desktop.](/website_page_images/lighthouse_desktop.png"Index desktop")
+![Lighthouse scores for index page on Desktop.](/website_page_images/lighthouse_desktop.png "Index desktop")
 
 </details>
 
