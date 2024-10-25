@@ -615,18 +615,144 @@ I used heroku to deploy the live site database. To do this you have to:
 * Add each of your other environment variables except DEVELOPMENT and DB_URL from the env.py file as a Config Var. The result should look something like this:
 * Login to github, search for your repository and click Connect.
 
-## AWS S3
+## Amazon AWS
 
 This project uses [AWS](https://aws.amazon.com/s3/) to store media and static files online, due to the fact that Heroku doesn't persist this type of data.
 
 Once you've created an AWS account and logged-in, follow these series of steps to get your project connected. Make sure you're on the AWS Management Console page.
+
+### S3
+
+* Search for S3
+
+* Create a new bucket, give it a name (matching your Heroku app name), and choose the region closest to you.
+
+* Uncheck Block all public access, and acknowledge that the bucket will be public (required for it to work on Heroku).
+
+* From Object Ownership, make sure to have ACLs enabled, and Bucket owner preferred selected
+
+* From the Properties tab, turn on static website hosting, and type index.html and error.html in their respective fields, then click Save.
+
+* From the Permissions tab, paste in the following CORS configuration:
+
+<pre>
+    <code>
+ [
+ 	{
+ 		"AllowedHeaders": [
+ 			"Authorization"
+ 		],
+ 		"AllowedMethods": [
+ 			"GET"
+ 		],
+ 		"AllowedOrigins": [
+ 			"*"
+ 		],
+ 		"ExposeHeaders": []
+ 	}
+ ]
+    </code>
+</pre>
+
+* For the Access control list (ACL) section, click edit and enable List for Everyone (public access) and accept the warning box
+
+* Select your bucket and copy the ARN for the time being - Next is IAM.
 
 ### IAM
 
 * Search for ‘iam’ in the search bar at the top
 ![IAM](/deployment/search_iam.png "IAM")
 
-* Click ‘User Groups’ on the left:
+* Click ‘User Groups’ on the left
+
+![User Groups](/deployment/user_groups.png "IAM")
+
+* Click ‘Create Group’ - Enter a group name. For consisitency, use the same one as your Heroku app. Then scroll to the bottom and click ‘Create user group.
+
+* Click ‘Policies’ in the menu to the left:
+
+![Policies](/deployment/policies.png "IAM")
+
+* Click Create policy, then select the JSON tab. 
+
+* Click the actions tab and select import policy.
+
+* From here search for S3 and select ‘AmazonS3FullAccess’ then select 'Import policy'.
+
+* Add your bucket ARN that you copied earlier in quotes to the ‘Resource’ list twice, for the second one add /* after the ARN. It should look like this.
+
+<pre>
+    <code>
+"arn:aws:s3:::test-bucket-2024",
+"arn:aws:s3:::test-bucket-2024/*"
+    </code>
+</pre>
+
+
+* Search for the policy you've just created and select it, then Attach Policy. 
+
+* The policy should look like the below:
+
+<pre>
+    <code>
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "Statement1",
+			"Effect": "Allow",
+			"Action": [
+				"s3:*"
+			],
+			"Resource": [
+				"YOUR_ARN",
+				"YOUR_ARN/*"
+			]
+		}
+	]
+}
+    </code>
+</pre>
+
+* Scroll down to the bottom and click next - Enter a policy name and description then scroll down and select 'Create Policy'
+
+* From User Groups, click Add User and add (user + the project name)
+
+* For "Select AWS Access Type", select Programmatic Access.
+
+* Select the group to add your new user to
+
+* Tags are optional, but you must click it to get to the review user page. Click Create User once done.
+
+* You should see a button to Download .csv, so click it to save a copy on your system.
+IMPORTANT: once you pass this page, you cannot come back to download it again, so do it immediately!
+
+* This contains the user's Access key ID and Secret access key.
+AWS_ACCESS_KEY_ID = Access key ID
+AWS_SECRET_ACCESS_KEY = Secret access key
+
+* In Heroku Config Vars remove DISABLE_COLLECTSTATIC still, so that AWS will handle the static files.
+
+* Add the AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY to your heroku config vars. Also add USE_AWS and set it to true.
+
+* Back within S3, create a new folder called: media
+
+* Select any existing media images for your project to prepare them for being uploaded into the new folder.
+
+* Under Manage Public Permissions, select Grant public read access to this object(s). - No further settings are required, so click Upload.
+
+### Stripe
+
+* From your Stripe dashboard, click to expand the "Get your test API keys".
+
+* Add the STRIPE_PUBLIC_KEY & STRIPE_SECRET_KEY to your heroku config vars.
+
+* Select webhooks and click add endpoint. Post your deploted heroku website link and add /checkout/wh/ to the end of that.
+
+* Retrieve all events then add the endpoint to complete the process.
+
+* Take your signing secret hook and and to heroku config vars as STRIPE_WH_SECRET.
+
  
 ### Github 
 
@@ -640,7 +766,7 @@ For either method, you will need to install any applicable packages found within
 pip3 install -r requirements.txt.
 
 #### How to Fork
-Make a copy of the original [Repository](https://github.com/Wxrren/Dain) on my GitHub account to view and/or make changes without affecting the original owner's repository. You can fork this repository by using the following steps:
+Make a copy of the original [Repository](https://github.com/Wxrren/Daintree) on my GitHub account to view and/or make changes without affecting the original owner's repository. You can fork this repository by using the following steps:
 
 * Log in to GitHub and locate the GitHub Repository
 * At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
@@ -662,26 +788,26 @@ Press Enter to create your local clone.
 
 ### Images:
 
-* Little girl smiling [craiyon](https://pics.craiyon.com/2023-10-08/2a6772ad003a49428d61e31b24dc3927.webp)
-* Background [vecteezy](https://static.vecteezy.com/system/resources/previews/013/442/432/non_2x/christmas-winter-border-background-free-vector.jpg)
-* Navbar [dreamstime](https://thumbs.dreamstime.com/b/abstract-holiday-new-year-merry-christmas-border-transparent-background-vector-illustration-eps-130860708.jpg)
-* Modals [craiyon.com](https://pics.craiyon.com/2023-10-08/2a6772ad003a49428d61e31b24dc3927.webp)
+* Images for products were taken from Amazon products urls from a [database taken from kaggle.com](https://www.kaggle.com/datasets/asaniczka/amazon-uk-products-dataset-2023?resource=download)
+
+* Landing page image was taken from [polkadotpassport.com](https://polkadotpassport.com/ways-explore-daintree/)
+
+![IAM](/media/body.jpg "Landing page")
+
 
 
 ### Content and Resources
 
 * All content was written by myself.
-* Information on splitting lists in python [Stackoverflow](https://stackoverflow.com/questions/20511581/split-and-strip-elements-in-list-python). I used some advise from here to split my lists so they are separated by new lines.
+* Information on pagination was provided by [Stackoverflow](https://stackoverflow.com/questions/74615456/how-to-add-pagination-in-django) & [Django documentation](https://docs.djangoproject.com/en/5.1/topics/pagination/) I used some advise from here to split the products across multiple pages as there was 4000 to go through.
 * Information on flexbox was provided by: [Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
 * Information on CSS Grid was provided by: [Complete Guide Grid](https://css-tricks.com/snippets/css/complete-guide-grid/).
 * README Template provided by [Code Institute](https://github.com/Code-Institute-Solutions/SampleREADME) & [Markdown Template](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#tables).
-* Materialize was used to help with the card columns + forms. I used [materializecss.com](https://materializecss.com/getting-started.html).
-* Case sensitive search function: [stackoverflow](https://stackoverflow.com/questions/16573095/case-insensitive-flask-sqlalchemy-query) - I used some information from here to help assist my search function. I learned about iLike which helps when targeting args.
-
+* Bootstrap was used to help with the card columns. I used [getbootstrap.com](https://getbootstrap.com/docs/4.0/content/tables/).
 * I created this project inline with the course content of [Code Institure](https://codeinstitute.net/full-stack-software-development-diploma/?utm_term=code%20institute&utm_campaign=CI+-+UK+-+Search+-+Brand&utm_source=adwords&utm_medium=ppc&hsa_acc=8983321581&hsa_cam=1578649861&hsa_grp=62188641240&hsa_ad=635720257674&hsa_src=g&hsa_tgt=kwd-319867646331&hsa_kw=code%20institute&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=Cj0KCQiAwP6sBhDAARIsAPfK_wZpFDXlxByAgIRT2S39rCz7auVaNWgJ2FF7efFEtX-oT-_qhvkTSiIaApIBEALw_wcB)
 
 ## Acknowledgements
 
-* My mentor Mitko Bachvarov for providing helpful feedback and a link to CSS modals guides on W3 schools.
-* Emily for her support during the project process, assistance with testing and advice on the written portion.
+* My mentor Mitko Bachvarov for providing helpful feedback.
+* Emily for her support during the project process, assistance with testing and advice on the written portion and staying up with me for many sleepless nights
 * Ethan and Olivia for their support with testing the site is working as intended.
